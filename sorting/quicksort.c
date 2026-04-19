@@ -1,4 +1,4 @@
-#include "common.h"
+#include "../include/common.h"
 
 void compare_swap(int* arr, int left, int right) {
     if (arr[right] < arr[left])
@@ -16,10 +16,10 @@ int partition(int* arr, int left, int right) {
     int j = right - 1;
     int temp;
     while (j > i) {
-        while (arr[i] <= arr[pivot])
+        while (i <= j && arr[i] <= arr[pivot])
             i++;
 
-        while (arr[j] > arr[pivot])
+        while (i <= j && arr[j] > arr[pivot])
             j--;
 
         if (j > i) {
@@ -29,7 +29,7 @@ int partition(int* arr, int left, int right) {
         }
     }
     
-    // Swap elements at positions j and pivot
+    // Swap elements at positions i and pivot
     temp = arr[pivot];
     arr[pivot] = arr[i];
     arr[i] = temp;
@@ -39,9 +39,9 @@ int partition(int* arr, int left, int right) {
 
 
 void quick_sort(int* arr, int left, int right) {
-    if (right <= left + 1) // 0, 1, or 2 elements
+    if ((right - left + 1) <= 2) // 0, 1, or 2 elements
     {
-        if (right == left + 1)
+        if ((right - left + 1) == 2)
             compare_swap(arr, left, right);
         return;
     }
@@ -60,7 +60,8 @@ int main(int argc, char** argv) {
     int* arr = parse_numbers(argc, argv);
     
     quick_sort(arr, 0, len - 1);
-
     print_numbers(arr, len);
+
+    free(arr);
     return 0;
 }
