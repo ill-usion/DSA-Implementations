@@ -30,9 +30,13 @@ int partition(int* arr, int left, int right) {
     }
     
     // Swap elements at positions i and pivot
-    temp = arr[pivot];
-    arr[pivot] = arr[i];
-    arr[i] = temp;
+    // Check if elements are equal to avoid making
+    // the algorithm unstable
+    if (arr[pivot] != arr[i]) {
+        temp = arr[pivot];
+        arr[pivot] = arr[i];
+        arr[i] = temp;
+    }
 
     return i;
 }
