@@ -34,15 +34,27 @@ sll_node_t* sll_append(sll_t* sll, int x) {
         return head;
     }
     
-    sll_node_t* new_node = (sll_node_t*) malloc(sizeof(sll_node_t));
-    new_node->data = x;
-    new_node->next = NULL;
+    sll_node_t* new_node = sll_new_node(x);
     
     sll_node_t* current = sll->head;
     while (current->next != NULL)
         current = current->next;
 
     current->next = new_node;
+    return new_node;
+}
+
+sll_node_t* sll_prepend(sll_t* sll, int x) {
+    if (sll->head == NULL) {
+        sll_node_t* head = sll_new_node(x);
+        sll->head = head;
+        return head;
+    }
+    
+    sll_node_t* new_node = sll_new_node(x);
+    new_node->next = sll->head;
+    sll->head = new_node;
+    
     return new_node;
 }
 
