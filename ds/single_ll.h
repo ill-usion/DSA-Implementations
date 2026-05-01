@@ -35,9 +35,8 @@ sll_node_t* sll_append(sll_t* sll, int x) {
     }
     
     sll_node_t* new_node = sll_new_node(x);
-    
     sll_node_t* current = sll->head;
-    while (current->next != NULL)
+    while (current->next)
         current = current->next;
 
     current->next = new_node;
