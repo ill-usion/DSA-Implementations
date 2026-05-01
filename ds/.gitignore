@@ -3,4 +3,5 @@ doubly_ll
 sorted_dll
 stack
 sll_stack
+sll_queue
 *.java
