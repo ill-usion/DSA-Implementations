@@ -64,6 +64,9 @@ int slls_pop_val(sll_stack_t* slls) {
 
 void slls_destroy(sll_stack_t* slls) {
     sll_destroy(slls->sll);
+    free(slls->sll);
+
+    slls->sll = NULL;
     slls->top = NULL;
     slls->len = 0;
 }
