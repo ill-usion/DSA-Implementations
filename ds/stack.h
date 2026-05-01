@@ -1,3 +1,6 @@
+#ifndef STACK_H
+#define STACK_H
+
 #include <stdlib.h>
 #include <assert.h>
 
@@ -45,3 +48,5 @@ void discard_stack(stack_t *s) {
     s->cap = 0;
     s->top = NULL;
 }
+
+#endif

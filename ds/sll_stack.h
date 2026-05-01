@@ -1,3 +1,6 @@
+#ifndef SLL_STACK_H
+#define SLL_STACK_H
+
 #include "single_ll.h"
 #include <assert.h>
 
@@ -64,3 +67,5 @@ void slls_destroy(sll_stack_t* slls) {
     slls->top = NULL;
     slls->len = 0;
 }
+
+#endif

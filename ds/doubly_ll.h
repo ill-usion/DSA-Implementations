@@ -1,3 +1,6 @@
+#ifndef DOUBLY_LL_H
+#define DOUBLY_LL_H
+
 #include <stdint.h>
 #include <stdlib.h>
 
@@ -299,3 +302,5 @@ void dll_destroy(dll_t* dll) {
     dll->head = NULL;
     dll->tail = NULL;
 }
+
+#endif

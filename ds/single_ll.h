@@ -1,3 +1,6 @@
+#ifndef SINGLE_LL_H
+#define SINGLE_LL_H
+
 #include <stdint.h>
 #include <stdlib.h>
 
@@ -128,3 +131,5 @@ void sll_destroy(sll_t* sll) {
         current = next;
     }
 }
+
+#endif

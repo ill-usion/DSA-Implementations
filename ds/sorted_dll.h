@@ -1,3 +1,6 @@
+#ifndef SORTED_DLL_H
+#define SORTED_DLL_H
+
 #include <stdint.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -330,3 +333,5 @@ void sdll_destroy(sdll_t* sdll) {
     sdll->head = NULL;
     sdll->tail = NULL;
 }
+
+#endif
